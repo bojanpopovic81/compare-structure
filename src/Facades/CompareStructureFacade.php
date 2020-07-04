@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Facade;
  * Class CompareStructure
  *
  */
-class CompareStructure extends Facade
+class CompareStructureFacade extends Facade
 {
 
     /**

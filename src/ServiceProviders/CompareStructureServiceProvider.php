@@ -4,8 +4,8 @@ namespace BpLab\CompareStructure\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
 use BpLab\CompareStructure\Contracts\SampleInterface;
-use BpLab\CompareStructure\Facades\CompareStructure;
-use BpLab\CompareStructure\Sample;
+use BpLab\CompareStructure\Facades\CompareStructureFacade;
+//use BpLab\CompareStructure\CompareStructure;
 
 /**
  * Class CompareStructureServiceProvider
@@ -92,7 +92,7 @@ class CompareStructureServiceProvider extends ServiceProvider
     {
         // Register 'nextpack.say' instance container
         $this->app['compare.structure'] = $this->app->share(function ($app) {
-            return $app->make(CompareStructure::class);
+            return $app->make(CompareStructureFacade::class);
         });
 
         // Register 'Sample' Alias, So users don't have to add the Alias to the 'app/config/app.php'
