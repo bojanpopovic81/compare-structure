@@ -1,11 +1,10 @@
 <?php
 
-namespace Nextpack\Nextpack\Contracts;
+namespace BpLab\CompareStructure\Contracts;
 
 /**
  * Interface  SampleInterface
  *
- * @author   Mahmoud Zalt  <mahmoud@zalt.me>
  */
 interface SampleInterface
 {

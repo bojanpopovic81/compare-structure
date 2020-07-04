@@ -1,17 +1,17 @@
 {
-  "name": "nextpack/nextpack",
-  "description": "Nextpack is a PHP Packages Framework (Starter Project)",
+  "name": "bplab/compare-structure",
+  "description": "This package compare data between database tables and their fields with models and transformers.",
   "license": "MIT",
   "keywords": [
-    "NextPack",
-    "Starter"
+    "compare structure",
+    "model",
+    "transformer",
+    "database"
   ],
   "authors": [
     {
-      "name": "Mahmoud Zalt",
-      "email": "mahmoud@zalt.me",
-      "homepage": "http://www.zalt.me",
-      "role": "Coffee Maker :)"
+      "name": "Bojan Popović",
+      "email": "bojanpopovic81@gmail.com"
     }
   ],
   "require": {
@@ -19,19 +19,19 @@
     "illuminate/config": "5.2.*"
   },
   "require-dev": {
-    "phpunit/phpunit": "4.*",
+    "phpunit/phpunit": "~7.0",
     "mockery/mockery": "0.*",
     "symfony/var-dumper": "2.*"
   },
   "autoload": {
     "psr-4": {
-      "Nextpack\\Nextpack\\": "src",
-      "Nextpack\\Library\\": "src/library"
+      "BpLab\\CompareStructure\\": "src",
+      "BpLab\\Library\\": "src/library"
     }
   },
   "autoload-dev": {
     "psr-4": {
-      "Nextpack\\Nextpack\\Tests\\": "tests"
+      "BpLab\\CompareStructure\\Tests\\": "tests"
     }
   },
   "scripts": {

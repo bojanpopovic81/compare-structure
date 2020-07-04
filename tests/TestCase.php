@@ -1,13 +1,12 @@
 <?php
 
-namespace Nextpack\Nextpack\Tests;
+namespace BpLab\CompareStructure\Tests;
 
-use PHPUnit_Framework_TestCase as PHPUnit;
+use PHPUnit\Framework\TestCase as PHPUnit;
 
 /**
  * Class TestCase
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
 class TestCase extends PHPUnit
 {

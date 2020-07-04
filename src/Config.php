@@ -1,14 +1,13 @@
 <?php
 
-namespace Nextpack\Nextpack;
+namespace BpLab\CompareStructure;
 
 use Illuminate\Config\Repository;
-use Nextpack\Nextpack\Exceptions\ConfigFileNotFoundException;
+use BpLab\CompareStructure\Exceptions\ConfigFileNotFoundException;
 
 /**
  * Class Config
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
 class Config
 {

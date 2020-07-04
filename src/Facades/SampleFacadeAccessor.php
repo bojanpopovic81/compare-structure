@@ -1,15 +1,14 @@
 <?php
 
-namespace Nextpack\Nextpack\Facades;
+namespace BpLab\CompareStructure\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
 /**
- * Class SampleFacadeAccessor
+ * Class CompareStructure
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class SampleFacadeAccessor extends Facade
+class CompareStructure extends Facade
 {
 
     /**
@@ -19,6 +18,6 @@ class SampleFacadeAccessor extends Facade
      */
     protected static function getFacadeAccessor()
     {
-        return 'nextpack.sample';
+        return 'compare.structure';
     }
 }

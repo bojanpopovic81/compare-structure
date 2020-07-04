@@ -1,18 +1,17 @@
 <?php
 
-namespace Nextpack\Nextpack\ServiceProviders;
+namespace BpLab\CompareStructure\ServiceProviders;
 
 use Illuminate\Support\ServiceProvider;
-use Nextpack\Nextpack\Contracts\SampleInterface;
-use Nextpack\Nextpack\Facades\SampleFacadeAccessor;
-use Nextpack\Nextpack\Sample;
+use BpLab\CompareStructure\Contracts\SampleInterface;
+use BpLab\CompareStructure\Facades\CompareStructure;
+use BpLab\CompareStructure\Sample;
 
 /**
- * Class NextpackServiceProvider
+ * Class CompareStructureServiceProvider
  *
- * @author  Mahmoud Zalt  <mahmoud@zalt.me>
  */
-class NextpackServiceProvider extends ServiceProvider
+class CompareStructureServiceProvider extends ServiceProvider
 {
 
     /**
@@ -70,8 +69,8 @@ class NextpackServiceProvider extends ServiceProvider
     private function implementationBindings()
     {
         $this->app->bind(
-            SampleInterface::class,
-            Sample::class
+            SampleInterface::class
+            //Sample::class
         );
     }
 
@@ -82,7 +81,7 @@ class NextpackServiceProvider extends ServiceProvider
     {
         // When users execute Laravel's vendor:publish command, the config file will be copied to the specified location
         $this->publishes([
-            __DIR__ . '/Config/nextpack.php' => config_path('nextpack.php'),
+            __DIR__ . '/Config/package.php' => $this->app->basePath() . '/config/package.php',
         ]);
     }
 
@@ -92,15 +91,17 @@ class NextpackServiceProvider extends ServiceProvider
     private function facadeBindings()
     {
         // Register 'nextpack.say' instance container
-        $this->app['nextpack.sample'] = $this->app->share(function ($app) {
-            return $app->make(Sample::class);
+        $this->app['compare.structure'] = $this->app->share(function ($app) {
+            return $app->make(CompareStructure::class);
         });
 
         // Register 'Sample' Alias, So users don't have to add the Alias to the 'app/config/app.php'
+	    /*
         $this->app->booting(function () {
             $loader = \Illuminate\Foundation\AliasLoader::getInstance();
-            $loader->alias('Sample', SampleFacadeAccessor::class);
+            $loader->alias('CompareStructure', CompareStructure::class);
         });
+	    */
     }
 
     /**
