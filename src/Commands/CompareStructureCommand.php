@@ -13,7 +13,7 @@ class CompareStructureCommand extends Command
      *
      * @var string
      */
-    protected $signature = 'test:test';
+    protected $signature = 'bplab:compare-structure';
 
     /**
      * The console command description.

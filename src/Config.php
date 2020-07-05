@@ -31,7 +31,7 @@ class Config
 	{
 		$configPath = $this->configurationPath();
 
-		$config_file = $configPath.'/'.self::CONFIG_FILE_NAME.'.php';
+		$config_file = $configPath.'\\'.self::CONFIG_FILE_NAME.'.php';
 
 		try {
 			if (!file_exists($config_file)) {
@@ -41,7 +41,7 @@ class Config
 
 		}
 
-		//$this->config = new Repository(require $config_file);
+		$this->config = new Repository(require $config_file);
 	}
 
 	/**
