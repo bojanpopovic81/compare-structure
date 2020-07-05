@@ -15,7 +15,7 @@ class Config
 	/**
 	 * Config file name
 	 */
-	CONST CONFIG_FILE_NAME = "package";
+	CONST CONFIG_FILE_NAME = "compare-structure";
 
 	/**
 	 * @var  \Illuminate\Config\Repository
@@ -33,12 +33,8 @@ class Config
 
 		$config_file = $configPath.'\\'.self::CONFIG_FILE_NAME.'.php';
 
-		try {
-			if (!file_exists($config_file)) {
-				throw new ConfigFileNotFoundException();
-			}
-		} catch (\Exception $e) {
-
+		if (!file_exists($config_file)) {
+			$config_file = self::CONFIG_FILE_NAME.'.php';
 		}
 
 		$this->config = new Repository(require $config_file);
@@ -52,7 +48,7 @@ class Config
 	private function configurationPath()
 	{
 		// the config file of the package directory
-		$config_path = __DIR__.'/Config';
+		$config_path = __DIR__.'/config';
 
 		// check if this laravel specific function `config_path()` exist (means this package is used inside
 		// a laravel framework). If so then load then try to load the laravel config file if it exist.
@@ -70,6 +66,6 @@ class Config
 	 */
 	public function get($key)
 	{
-		//return $this->config->get($key);
+		return $this->config->get($key);
 	}
 }
