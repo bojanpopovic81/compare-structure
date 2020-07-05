@@ -34,7 +34,7 @@ class CompareStructure
      *
      * @return  string
      */
-    public function sayHello($name)
+    public function run()
     {
         $greeting = $this->config->get('greeting');
 

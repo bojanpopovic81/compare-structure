@@ -32,6 +32,13 @@ class CompareStructureServiceProvider extends ServiceProvider
         |--------------------------------------------------------------------------
         */
         $this->configPublisher();
+
+	    if ($this->app->runningInConsole()) {
+		    $this->commands([
+			    FooCommand::class,
+		    ]);
+	    }
+
     }
 
     /**
@@ -81,7 +88,7 @@ class CompareStructureServiceProvider extends ServiceProvider
     {
         // When users execute Laravel's vendor:publish command, the config file will be copied to the specified location
         $this->publishes([
-            __DIR__ . '/Config/package.php' => $this->app->basePath() . '/config/package.php',
+            __DIR__ . '/Config/compare-structure.php' => $this->app->basePath() . '/config/compare-structure.php',
         ]);
     }
 

@@ -16,7 +16,8 @@
   ],
   "require": {
     "php": ">=5.4.0",
-    "illuminate/config": "5.8.36"
+    "illuminate/config": "5.8.36",
+    "illuminate/console": "5.8.36"
   },
   "require-dev": {
     "phpunit/phpunit": "~7.0",
