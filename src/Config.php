@@ -31,10 +31,10 @@ class Config
 	{
 		$configPath = $this->configurationPath();
 
-		$config_file = $configPath.'\\'.self::CONFIG_FILE_NAME.'.php';
+		$config_file = $configPath.'/'.self::CONFIG_FILE_NAME.'.php';
 
 		if (!file_exists($config_file)) {
-			$config_file = '/Config/'.self::CONFIG_FILE_NAME.'.php';
+			$config_file = './src/Config/'.self::CONFIG_FILE_NAME.'.php';
 		}
 
 		$this->config = new Repository(require $config_file);
