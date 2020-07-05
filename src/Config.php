@@ -41,7 +41,7 @@ class Config
 
 		}
 
-		$this->config = new Repository(require $config_file);
+		//$this->config = new Repository(require $config_file);
 	}
 
 	/**
@@ -70,6 +70,6 @@ class Config
 	 */
 	public function get($key)
 	{
-		return $this->config->get($key);
+		//return $this->config->get($key);
 	}
 }
